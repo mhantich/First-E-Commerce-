@@ -297,6 +297,9 @@ body {
   .image-conainter {
     display: none;
   }
+  .div-caard{
+    max-height: 66vh;
+  }
 
   .hero-title {
     font-size: 2rem !important;
