@@ -12,7 +12,7 @@ const initialState = {
 // Generates pending, fulfilled and rejected action types
 export const fetchProduct = createAsyncThunk('user/fetchProduct',async() => {
   return axios
-    .get('http://makeup-api.herokuapp.com/api/v1/products.json')
+    .get('https://makeup-api.herokuapp.com/api/v1/products.json')
     .then(response => response.data)
 })
 
