@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from "react";
+import React, {  lazy } from "react";
 
 const LazyHomesection = lazy(() => import("../components/Homesection"));
 const LazyBestSell = lazy(() => import("../components/BestSell"));

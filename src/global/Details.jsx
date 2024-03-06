@@ -10,7 +10,6 @@ import { addToCart } from "../state/Card";
 function Details() {
   const location = useLocation();
   const { id } = useParams();
-  const productName = location.pathname;
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [id]);
@@ -86,7 +85,7 @@ const dispatch = useDispatch();
             />
           </Col>
           <Col md={6} className="text-capitalize d-flex flex-column gap-1">
-            <h6>{productName}</h6>
+          
             <h2 className="hero-title ">{singleProdact[0]?.name} </h2>
             {singleProdact[0]?.rating == null && 5.6}
 
