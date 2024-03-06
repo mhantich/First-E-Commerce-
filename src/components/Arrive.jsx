@@ -42,7 +42,7 @@ function Arrive() {
               {filteredProducts &&
                 filteredProducts.map((product, index) => (
                   <Col key={index} sm={12} md={4} className="">
-                    <Card className="w-100 m-1 p-2 border-0  ">
+                    <Card className="w-100 m-1 p-2 border-0 text-center  ">
                       <Card.Img
                         className="border-0 w-50 h-50  "
                         src={product.image_link}
@@ -52,7 +52,7 @@ function Arrive() {
                       />
                       <Card.Body>
                         <Card.Text
-                          className="hero-title fs-7 my-2"
+                          className="hero-title text-s fs-7 my-2"
                           style={{ whiteSpace: "nowrap" }}
                         >
                           {product.name}

@@ -45,7 +45,7 @@ function BestSell() {
               />
 
               <Card.Body>
-                <Card.Text className="hero-title">{product.name}</Card.Text>
+                <Card.Text className="hero-title text-s ">{product.name}</Card.Text>
                 <Card.Text className=" fs-7">{product.brand}</Card.Text>
               </Card.Body>
               <Link

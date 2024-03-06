@@ -303,6 +303,10 @@ body {
     font-family: "Abril Fatface", serif;
     font-style: normal;
   }
+
+  .text-s{
+    font-size: 0.7rem  !important;
+  }
 }
 .bg-dark-2{
   background-color: rgba(0, 0, 0, 0.523);
