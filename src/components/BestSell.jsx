@@ -61,7 +61,7 @@ function BestSell() {
                       <Card.Text className=" fs-7">{product.brand}</Card.Text>
                     </Card.Body>
                     <Link
-                      className="text-decoration-none fw-bold text-capitalize"
+                      className="text-decoration-none fw-bold text-capitalize text-black "
                       to={`prodact/${product.id}`}
                     >
                       <button className=" btn-custmer mx-auto   text-capitalize hover-text gap-2  py-1 px-2 d-flex justify-content-between px-2 ">

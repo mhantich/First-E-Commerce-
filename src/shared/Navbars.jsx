@@ -39,7 +39,7 @@ function Navbars() {
             <Nav>
               {" "}
               <Link
-                className="text-decoration-none fw-bold text-capitalize"
+                className="text-decoration-none text-black fw-bold text-capitalize"
                 to={"/"}
               >
                 Home
@@ -48,7 +48,7 @@ function Navbars() {
             <Nav>
               {" "}
               <Link
-                className="text-decoration-none fw-bold text-capitalize"
+                className="text-decoration-none text-black fw-bold text-capitalize"
                 to={"/"}
               >
                 about
@@ -57,7 +57,7 @@ function Navbars() {
             <Nav>
               {" "}
               <Link
-                className="text-decoration-none fw-bold text-capitalize"
+                className="text-decoration-none  text-black fw-bold text-capitalize"
                 to={"/"}
               >
                 Pricing
@@ -66,7 +66,7 @@ function Navbars() {
             <Nav>
               {" "}
               <Link
-                className="text-decoration-none fw-bold text-capitalize"
+                className="text-decoration-none text-black fw-bold text-capitalize"
                 to={"/"}
               >
                 Features
@@ -75,7 +75,7 @@ function Navbars() {
             <Nav>
               {" "}
               <Link
-                className="text-decoration-none fw-bold text-capitalize"
+                className="text-decoration-none text-black fw-bold text-capitalize"
                 to={"/"}
               >
                 best sell
@@ -86,14 +86,14 @@ function Navbars() {
             <Nav>
               Login{" "}
               <Link
-                className="text-decoration-none fw-bold text-capitalize"
+                className="text-decoration-none text-black fw-bold text-capitalize"
                 to={"/"}
               ></Link>
             </Nav>
             <Nav>
               {" "}
               <Link
-                className="text-decoration-none fw-bold text-capitalize"
+                className="text-decoration-none text-black fw-bold text-capitalize"
                 to={"/"}
               ></Link>
               <button
