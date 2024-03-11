@@ -73,7 +73,6 @@ const dispatch = useDispatch();
 
 
 const handleaDD = () =>{
-console.log('click')
   dispatch(addToCart({ id:+id, product: singleProdact[0], quantity: Number ,color:color } ))
   dispatch(isAddAnamation({} ))
   setTimeout(() => {

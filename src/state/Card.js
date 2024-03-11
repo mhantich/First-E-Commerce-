@@ -21,9 +21,7 @@ export const cartSlice = createSlice({
       );
 
       if (existingItem) {
-        console.log(action.payload.color);
         action.payload.color.forEach((element) => {
-          console.log(element);
           if (!existingItem.color.includes(element)) {
             existingItem.color.push(element);
           }
@@ -35,7 +33,6 @@ export const cartSlice = createSlice({
     },
 
     removeFromCart: (state, action) => {
-      console.log(action.payload.id);
       state.cart = state.cart.filter((item) => item.id !== action.payload.id);
     },
 

@@ -42,15 +42,20 @@ function BestSell() {
                     className="border-0 mx-auto  "
                     style={{ width: "18rem", margin: "5px auto" }}
                   >
+                    <div style={{height:'220px'}}>
                     <Card.Img
                       className="border-0"
-                      src={product.image_link}
+                      style={{height:'100%',width:'100%'}}
+                      src={product.api_featured_image}
                       alt={product.name}
                       loading="lazy"
                     />
+                    </div>
+                  
 
-                    <Card.Body>
-                      <Card.Text className="hero-title text-s ">
+                    <Card.Body style={{minHeight:'95px'}}>
+
+                      <Card.Text   className="hero-title text-s  ">
                         {product.name}
                       </Card.Text>
                       <Card.Text className=" fs-7">{product.brand}</Card.Text>
@@ -59,9 +64,9 @@ function BestSell() {
                       className="text-decoration-none fw-bold text-capitalize"
                       to={`prodact/${product.id}`}
                     >
-                      <button className=" btn-custmer mx-auto  text-capitalize hover-text   p-1 d-flex justify-content-between px-2 ">
-                        <span className="fw-bold">add to cart</span>
-                        <span className="fw-bold">${product.price}</span>
+                      <button className=" btn-custmer mx-auto   text-capitalize hover-text gap-2  py-1 px-2 d-flex justify-content-between px-2 ">
+                        <span className="fw-bold fs-7">add to cart</span>
+                        <span className="fw-bold fs-7">${product.price}</span>
                       </button>
                     </Link>
                   </Card>

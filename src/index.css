@@ -22,8 +22,7 @@ html,
 body {
   overflow-x: hidden;
 }
-.textfonts {
-}
+
 .code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -38,8 +37,7 @@ body {
   max-width: 100%;
   /* max-height: 90%; */
 }
-.hero {
-}
+
 .fs-0 {
   font-size: 3rem;
 }
@@ -201,14 +199,8 @@ body {
 /* end of loader */
 
 .bg-lainer {
-  background: rgb(2, 0, 36);
-  background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(123, 154, 197, 1) 16%,
-    rgba(221, 221, 221, 1) 31%,
-    rgba(97, 137, 191, 0.8935223747702206) 94%
-  );
+  background: rgb(221,221,221);
+  background: linear-gradient(90deg, rgba(221,221,221,0.7792366946778712) 0%, rgba(123,154,197,1) 100%);
 }
 .word-spacing {
   word-spacing: 10px; /* Adjust the value as needed */
@@ -257,7 +249,7 @@ body {
   overflow: hidden;
 }
 @media (max-width: 575px) {
-  .image-conainter {
+  .image-conainter,.arriveImg {
     display: none;
   }
   .div-caard {
@@ -271,7 +263,7 @@ body {
   }
 
   .text-s {
-    font-size: 0.7rem !important;
+    font-size: 0.9rem !important;
   }
 
   .prodact-imgsing {
@@ -281,4 +273,7 @@ body {
 }
 .bg-dark-2 {
   background-color: rgba(0, 0, 0, 0.523);
+}
+.text-s {
+  font-size: 0.7rem !important;
 }

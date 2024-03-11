@@ -4,7 +4,6 @@ import { decreaseCount, increaseCount, removeFromCart } from '../state/Card'
 import { FaRegTrashCan } from "react-icons/fa6";
 
 function ItemCard({Cart}) {
-  console.log(Cart)
     const dispatch =useDispatch()
  
   

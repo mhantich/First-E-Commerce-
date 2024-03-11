@@ -35,6 +35,7 @@ function Arrive() {
               alt=""
               style={{ objectFit: "cover", height: "500px", width: "100%" }}
               loading="lazy"
+              className="arriveImg"
             />
           </Col>
           <Col md={6}>
