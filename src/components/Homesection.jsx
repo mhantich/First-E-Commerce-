@@ -26,7 +26,7 @@ function Homesection() {
           <div className="d-flex justify-content-center  profle">
             <img
               className="profile-img"
-              src="./bannerhero1.jpg"
+              src="./bannerhero.jpg"
               width="100%"
               alt="..."
               loading="lazy"

@@ -1,14 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
-import { useLocation, useParams } from "react-router";
+import {useParams } from "react-router";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { addToCart } from "../state/Card";
+import { addToCart ,isAddAnamation } from "../state/Card";
 function Details() {
-  const location = useLocation();
   const { id } = useParams();
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -71,6 +70,20 @@ const [color, setsetColor] = useState([]);
 // const [prodact, setProdact] = useState([])
 
 const dispatch = useDispatch();
+
+
+const handleaDD = () =>{
+console.log('click')
+  dispatch(addToCart({ id:+id, product: singleProdact[0], quantity: Number ,color:color } ))
+  dispatch(isAddAnamation({} ))
+  setTimeout(() => {
+    dispatch(isAddAnamation({}))
+  }, 3000);
+  
+
+
+}
+
   return (
     
    <div>
@@ -80,7 +93,8 @@ const dispatch = useDispatch();
             <img
               src={singleProdact[0]?.image_link}
               alt=""
-              style={{ objectFit: "cover", height: "500px", width: "100%" }}
+              className="prodact-imgsing"
+              style={{ objectFit: "cover" }}
               loading="lazy"
             />
           </Col>
@@ -104,7 +118,7 @@ const dispatch = useDispatch();
               {singleProdact[0]?.product_colors.map((item, index) => (
                 <button
                 onClick={()=>{
-                  handleColor(item)
+                  handleColor(item.hex_value)
                 }}
                   style={{ backgroundColor: `${item.hex_value}` }}
                   className="w-25  btn p-2"
@@ -132,7 +146,7 @@ const dispatch = useDispatch();
               <button
                 className=" btn-custmer hover-text p-2 flex-1 w-75 gap-2 d-flex justify-content-center  px-2 "
                 style={{ display: "block" }}
-                onClick={() => dispatch(addToCart({payload: { product: singleProdact[0], quantity: Number ,color:color } }))}
+                onClick={handleaDD}
                 >
                 <span className="fw-bold text-capitalize ">add to cart</span>
                 <span className="fw-bold text-capitalize ">{singleProdact[0]?.price}$</span>

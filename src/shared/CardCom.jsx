@@ -7,7 +7,14 @@ import ItemCard from "./ItemCard";
 
 function CardCom() {
   const cartitem = useSelector((state) => state.Card.cart);
-  console.log(cartitem.length )
+  const total = cartitem.reduce((acc, item) => {
+    const itemPrice = parseFloat(item.product.price);
+    const itemQuantity = parseInt(item.quantity);
+
+        return acc + (itemPrice * itemQuantity);
+    
+    
+}, 0);
   const  dispatch = useDispatch()
   return (
     <div className=" bg-dark-2 fixeds z-index-2 d-flex justify-content-end">
@@ -22,8 +29,8 @@ function CardCom() {
             <div className="flex-1 gap-3 d-flex flex-column align-items-centerr div-caard mb-4 ">
                  <ItemCard Cart={cartitem}/>
             </div>
-            <button className=" text-capitalize py-2 btn-custmer  w-100 hover-text mb-2">
-              checkout
+            <button className=" fw-bold text-capitalize py-2 btn-custmer  w-100 hover-text mb-2">
+              checkout  {total.toFixed(2)}$ 
             </button>
             </div>
         }

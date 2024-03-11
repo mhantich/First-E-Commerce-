@@ -3,7 +3,7 @@ import { Col, Row, Container, Card } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 function BestSell() {
-  const {Product,error} = useSelector((state) => state.products);
+  const { Product, error } = useSelector((state) => state.products);
 
   // Define the brand you want to filter by
   const desiredBrand = "l'oreal";
@@ -29,38 +29,46 @@ function BestSell() {
           </p>
         </div>
 
-    { error === true ?  <div className="d-flex container justify-content-center"><img src="notContacted.gif" alt="" /> </div>   :   <Row className="justify-content-center gap-1">
-      {filteredProducts &&
-        filteredProducts.map((product,index) => (
-          <Col sm={12} md={3} key={index}>
-            <Card
-              className="border-0 mx-auto  "
-              style={{ width: "18rem", margin: "5px auto" }}
-            >
-              <Card.Img
-                className="border-0"
-                src={product.image_link}
-                alt={product.name}
-                loading="lazy"
-              />
+        {error === true ? (
+          <div className="d-flex container justify-content-center">
+            <img src="back404.gif" alt="" />{" "}
+          </div>
+        ) : (
+          <Row className="justify-content-center gap-1">
+            {filteredProducts &&
+              filteredProducts.map((product, index) => (
+                <Col sm={12} md={3} key={index}>
+                  <Card
+                    className="border-0 mx-auto  "
+                    style={{ width: "18rem", margin: "5px auto" }}
+                  >
+                    <Card.Img
+                      className="border-0"
+                      src={product.image_link}
+                      alt={product.name}
+                      loading="lazy"
+                    />
 
-              <Card.Body>
-                <Card.Text className="hero-title text-s ">{product.name}</Card.Text>
-                <Card.Text className=" fs-7">{product.brand}</Card.Text>
-              </Card.Body>
-              <Link
-                className="text-decoration-none fw-bold text-capitalize"
-                to={`prodact/${product.id}`}
-              >
-                <button className=" btn-custmer mx-auto  text-capitalize hover-text   p-1 d-flex justify-content-between px-2 ">
-                  <span className="fw-bold">add to cart</span>
-                  <span className="fw-bold">${product.price}</span>
-                </button>
-              </Link>
-            </Card>
-          </Col>
-        ))}
-    </Row>}
+                    <Card.Body>
+                      <Card.Text className="hero-title text-s ">
+                        {product.name}
+                      </Card.Text>
+                      <Card.Text className=" fs-7">{product.brand}</Card.Text>
+                    </Card.Body>
+                    <Link
+                      className="text-decoration-none fw-bold text-capitalize"
+                      to={`prodact/${product.id}`}
+                    >
+                      <button className=" btn-custmer mx-auto  text-capitalize hover-text   p-1 d-flex justify-content-between px-2 ">
+                        <span className="fw-bold">add to cart</span>
+                        <span className="fw-bold">${product.price}</span>
+                      </button>
+                    </Link>
+                  </Card>
+                </Col>
+              ))}
+          </Row>
+        )}
       </Container>
     </div>
   );

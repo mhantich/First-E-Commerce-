@@ -9,6 +9,7 @@ import ByDev from "./shared/ByDev";
 import { fetchProduct } from "./state/products";
 import Loader from "./global/Loader";
 import CardCom from "./shared/CardCom";
+import AddSucess from "./shared/AddSucess";
 
 const LazyHomeSection = lazy(() => import("./global/Home"));
 const LazyDetailsSection = lazy(() => import("./global/Details"));
@@ -18,6 +19,7 @@ const App = () => {
   const dispatch = useDispatch();
   const { loading } = useSelector((state) => state.products);
   const isCartOpen = useSelector((state) => state.Card.isCartOpen);
+  const {AddAnamation} = useSelector((state) => state.Card);
 
   useEffect(() => {
     dispatch(fetchProduct());
@@ -48,6 +50,7 @@ const App = () => {
           <Footer />
            {loading && <Loader />} 
           <ByDev />
+        {AddAnamation &&  <AddSucess/>}
         </div>
       </>
     );

@@ -38,7 +38,7 @@ function Arrive() {
             />
           </Col>
           <Col md={6}>
-          { error === true ?  <div className="d-flex container justify-content-center"><img src="notContacted.gif" alt="" /> </div>   :  <Row className="py-3">
+          { error === true ?  <div className="d-flex container justify-content-center"><img src="back404.gif" alt=""  /> </div>   :  <Row className="py-3">
               {filteredProducts &&
                 filteredProducts.map((product, index) => (
                   <Col key={index} sm={12} md={4} className="">

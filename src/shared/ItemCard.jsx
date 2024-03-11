@@ -1,9 +1,13 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { decreaseCount, increaseCount } from '../state/Card'
+import { decreaseCount, increaseCount, removeFromCart } from '../state/Card'
+import { FaRegTrashCan } from "react-icons/fa6";
 
 function ItemCard({Cart}) {
+  console.log(Cart)
     const dispatch =useDispatch()
+ 
+  
   return (
 
     <div>
@@ -16,20 +20,20 @@ function ItemCard({Cart}) {
                     <img
                       style={{ objectFit: "cover" }}
                       className="w-100  h-100"
-                      src={item.payload.product.image_link}
+                      src={item.product.image_link}
                       alt=""
                     />
                   </div>
 
                   <div className="px-2 d-flex flex-column flex-grow-1">
-                    <p className="fw-bold text-capitalize">{item.payload.product.name} - {item.payload.product.price}$ </p>
-                    <p className="fw-bold text-capitalize">{item.payload.product.brand}</p>
+                    <p className="fw-bold text-capitalize">{item.product.name} - {item.product.price}$ </p>
+                    <p className="fw-bold text-capitalize">{item.product.brand}</p>
                   
 
                             <div className="d-flex gap-2 flex-wrap  py-2">
-                            {item.payload.color.map((item, index) => (
+                            {item.color.map((item, index) => (
                               <button
-                                style={{ backgroundColor: `${item.hex_value}` }}
+                                style={{ backgroundColor: `${item}` }}
                                 className=" btn p-2"
                                 key={index}
                               ></button>
@@ -41,18 +45,19 @@ function ItemCard({Cart}) {
 
 
                   <div className=" px-2 d-flex flex-column  justify-content-center align-items-center gap-2">
-                    {/* <CiTrash /> */}
+                  < FaRegTrashCan                     onClick={() => dispatch(decreaseCount({id:item.product.id})) }
+  /> 
 
                     <div className=" border d-flex gap-2 align-items-center ">
                       <button
-                    onClick={() => dispatch(decreaseCount({id:item.payload.product.id})) }
+                    onClick={() => dispatch(decreaseCount({id:item.product.id})) }
                         className="py-1 px-2 btn  hover-text"
                       >
                         -
                       </button>
-                      <p className="m-1 fs-7 fw-bold">{item.payload.quantity}</p>
+                      <p className="m-1 fs-7 fw-bold">{item.quantity}</p>
                       <button
-                        onClick={() => dispatch(increaseCount({id:item.payload.product.id})) }
+                        onClick={() => dispatch(increaseCount({id:item.product.id})) }
                         className="py-1 px-2 btn hover-text"
                       >
                         +
