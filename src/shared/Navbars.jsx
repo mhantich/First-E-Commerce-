@@ -37,7 +37,7 @@ function Navbars() {
         <Navbar.Collapse id="basic-navbar-nav bg-dark">
           <Nav className="m-auto  gap-3">
             <Nav>
-              {" "}
+          
               <Link
                 className="text-decoration-none text-black fw-bold text-capitalize"
                 to={"/"}
@@ -46,25 +46,17 @@ function Navbars() {
               </Link>
             </Nav>
             <Nav>
-              {" "}
+          
               <Link
                 className="text-decoration-none text-black fw-bold text-capitalize"
-                to={"/"}
+                to={"/about"}
               >
                 about
               </Link>
             </Nav>
+        
             <Nav>
-              {" "}
-              <Link
-                className="text-decoration-none  text-black fw-bold text-capitalize"
-                to={"/"}
-              >
-                Pricing
-              </Link>
-            </Nav>
-            <Nav>
-              {" "}
+          
               <Link
                 className="text-decoration-none text-black fw-bold text-capitalize"
                 to={"/"}
@@ -73,7 +65,7 @@ function Navbars() {
               </Link>
             </Nav>
             <Nav>
-              {" "}
+          
               <Link
                 className="text-decoration-none text-black fw-bold text-capitalize"
                 to={"/"}
@@ -91,7 +83,7 @@ function Navbars() {
               ></Link>
             </Nav>
             <Nav>
-              {" "}
+          
               <Link
                 className="text-decoration-none text-black fw-bold text-capitalize"
                 to={"/"}

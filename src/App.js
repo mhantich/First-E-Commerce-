@@ -1,6 +1,12 @@
 import { Suspense, lazy, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { createBrowserRouter, createRoutesFromElements, Outlet, Route, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Outlet,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
 import "./App.css";
 import Topbar from "./shared/Topbar";
 import Navbars from "./shared/Navbars";
@@ -10,16 +16,20 @@ import { fetchProduct } from "./state/products";
 import Loader from "./global/Loader";
 import CardCom from "./shared/CardCom";
 import AddSucess from "./shared/AddSucess";
+import About from "./global/About";
 
 const LazyHomeSection = lazy(() => import("./global/Home"));
 const LazyDetailsSection = lazy(() => import("./global/Details"));
 const LazyProdactSection = lazy(() => import("./global/Prodact"));
+const LazyAboutSection = lazy(() => import('./global/About'));
+
 
 const App = () => {
+
   const dispatch = useDispatch();
   const { loading } = useSelector((state) => state.products);
   const isCartOpen = useSelector((state) => state.Card.isCartOpen);
-  const {AddAnamation} = useSelector((state) => state.Card);
+  const { AddAnamation } = useSelector((state) => state.Card);
 
   useEffect(() => {
     dispatch(fetchProduct());
@@ -27,19 +37,19 @@ const App = () => {
 
   useEffect(() => {
     const handleCartStateChange = () => {
-      document.documentElement.classList.toggle('cartOpenClass', isCartOpen);
+      document.documentElement.classList.toggle("cartOpenClass", isCartOpen);
     };
 
     handleCartStateChange();
 
     return () => {
-      document.documentElement.classList.remove('cartOpenClass');
+      document.documentElement.classList.remove("cartOpenClass");
     };
   }, [isCartOpen]);
 
-  const Layout = () => {
- 
 
+  // console.log(lazyAboutSection)
+      const Layout = () => {
     return (
       <>
         {isCartOpen && <CardCom />}
@@ -48,9 +58,9 @@ const App = () => {
           <Navbars />
           <Outlet />
           <Footer />
-           {loading && <Loader />} 
+          {loading && <Loader />}
           <ByDev />
-        {AddAnamation &&  <AddSucess/>}
+          {AddAnamation && <AddSucess />}
         </div>
       </>
     );
@@ -58,32 +68,22 @@ const App = () => {
 
   const routers = createBrowserRouter(
     createRoutesFromElements(
-     
       <Route>
         <Route path="/" element={<Layout />}>
           <Route index element={<LazyHomeSection />} />
-          <Route
-            path="/prodact/:id"
-            element={
-             
-                <LazyDetailsSection />
-             
-            }
-          />
+          <Route path="/prodact/:id" element={<LazyDetailsSection />} />
+          <Route path="/about" element={<LazyAboutSection/>} />
           <Route path="/prodact" element={<LazyProdactSection />} />
         </Route>
         <Route path="*" element="not found" />
       </Route>
-         
     )
   );
 
   return (
-    
     <Suspense fallback={<loading />}>
       <RouterProvider router={routers} />
     </Suspense>
-    
   );
 };
 
