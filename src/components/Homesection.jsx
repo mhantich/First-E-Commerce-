@@ -4,7 +4,7 @@ import { Col, Row } from "react-bootstrap";
 function Homesection() {
   return (
     <div>
-      <Row className="custom-color hero">
+      <Row className="custom-color m-0 p-0 hero">
         <Col xs={12} md={5} className=" text-conaitner py-1 m-auto">
           <div className="  p-2 d-flex  justify-content-center flex-column gap-3 text-capitalize  px-3 ">
             <h1 className=" fs-0 hero-title">
@@ -22,7 +22,7 @@ function Homesection() {
           </div>
         </Col>
 
-        <Col className="image-conainter" xs={12} md={7}>
+        <Col className="image-conainter m-0 p-0" xs={12} md={7}>
           <div className="d-flex justify-content-center  profle">
             <img
               className="profile-img"
@@ -35,12 +35,12 @@ function Homesection() {
           </div>
         </Col>
       </Row>
-      <div className="d-flex gap-4 mt-3 justify-content-between">
-        <img src="./brand/brand-1.svg" alt="" />
-        <img src="./brand/brand-2.svg" alt="" />
-        <img src="./brand/brand-3.svg" alt="" />
-        <img src="./brand/brand-4.svg" alt="" />
-        <img src="./brand/brand-5.svg" alt="" />
+      <div className="d-flex  gap-4 mt-3 justify-content-between flex-wrap ">
+        <img className="mx-auto" src="./brand/brand-1.svg" alt="" />
+        <img  className="mx-auto"src="./brand/brand-3.svg" alt="" />
+        <img className="mx-auto"src="./brand/brand-4.svg" alt="" />
+        <img className="mx-auto" src="./brand/brand-5.svg" alt="" />
+        <img  className="mx-auto"src="./brand/brand-2.svg" alt="" />
   
       </div>
     </div>

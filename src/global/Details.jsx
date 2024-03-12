@@ -61,12 +61,12 @@ function Details() {
   };
 
   const singleProdact = Products.filter((item) => item.id === +id);
-  console.log(singleProdact[0]?.product_colors);
+ 
 
   const productSimilar = Products.filter(
     (item) => item.product_type === singleProdact[0]?.product_type
   );
-  // const [prodact, setProdact] = useState([])
+
 
   const dispatch = useDispatch();
 
@@ -158,14 +158,14 @@ function Details() {
                   <div className="d-flex justify-content-center align-items-center">
                     <button
                       onClick={() => setNumber(Math.max(Number - 1, 0))}
-                      className="py-2 px-3 text-black btn-custmer hover-text"
+                      className="py-2 px-3 text-black text-black-s-hover btn-custmer hover-text"
                     >
                       -
                     </button>
                     <p className="m-1 fw-bold mx-2">{Number}</p>
                     <button
                       onClick={() => setNumber(Number + 1)}
-                      className="py-2 px-3 text-black btn-custmer hover-text"
+                      className="py-2 px-3 text-black-s-hover text-black btn-custmer hover-text"
                     >
                       +
                     </button>
@@ -175,10 +175,10 @@ function Details() {
                     style={{ display: "block" }}
                     onClick={handleaDD}
                   >
-                    <span className="fw-bold text-black text-capitalize ">
+                    <span className="fw-bold text-black-s-hover text-black text-capitalize ">
                       add to cart
                     </span>
-                    <span className="fw-bold text-black text-capitalize ">
+                    <span className="fw-bold text-black text-black-s-hover text-capitalize ">
                       {singleProdact[0]?.price}$
                     </span>
                   </button>
@@ -217,10 +217,10 @@ function Details() {
                       className="text-decoration-none"
                     >
                       <button
-                        className=" btn-custmer hover-text p-1  px-2 "
+                        className=" btn-custmer hover-text p-1 fw-bold  text-capitalize  px-2 "
                         style={{ display: "block", margin: "0 auto" }}
                       >
-                        <span className="fw-bold text-black text-capitalize ">
+                        <span>
                           shop now
                         </span>
                       </button>

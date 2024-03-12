@@ -9,14 +9,13 @@ const LazyContact = lazy(() => import("../components/Contact"));
 
 function Home() {
   return (
-    <div>
-      
+    <div className="">
         <LazyHomesection />
-        <LazyBestSell />
+        <LazyBestSell /> 
         <LazyBrands />
         <LazyArrive />
         <LazyRewies />
-        <LazyContact />
+        <LazyContact /> 
      
     </div>
   );

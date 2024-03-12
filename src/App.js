@@ -16,16 +16,14 @@ import { fetchProduct } from "./state/products";
 import Loader from "./global/Loader";
 import CardCom from "./shared/CardCom";
 import AddSucess from "./shared/AddSucess";
-import About from "./global/About";
+import Erro from "./global/Erro";
 
 const LazyHomeSection = lazy(() => import("./global/Home"));
 const LazyDetailsSection = lazy(() => import("./global/Details"));
-const LazyProdactSection = lazy(() => import("./global/Prodact"));
-const LazyAboutSection = lazy(() => import('./global/About'));
-
+const LazyProdactSection = lazy(() => import("./global/Shoop"));
+const LazyAboutSection = lazy(() => import("./global/About"));
 
 const App = () => {
-
   const dispatch = useDispatch();
   const { loading } = useSelector((state) => state.products);
   const isCartOpen = useSelector((state) => state.Card.isCartOpen);
@@ -47,9 +45,7 @@ const App = () => {
     };
   }, [isCartOpen]);
 
-
-  // console.log(lazyAboutSection)
-      const Layout = () => {
+  const Layout = () => {
     return (
       <>
         {isCartOpen && <CardCom />}
@@ -72,16 +68,16 @@ const App = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<LazyHomeSection />} />
           <Route path="/prodact/:id" element={<LazyDetailsSection />} />
-          <Route path="/about" element={<LazyAboutSection/>} />
-          <Route path="/prodact" element={<LazyProdactSection />} />
+          <Route path="/about" element={<LazyAboutSection />} />
+          <Route path="/shoop" element={<LazyProdactSection />} />
         </Route>
-        <Route path="*" element="not found" />
+        <Route path="*" element={'erro'} />
       </Route>
     )
   );
 
   return (
-    <Suspense fallback={<loading />}>
+    <Suspense fallback={<Loader />}>
       <RouterProvider router={routers} />
     </Suspense>
   );

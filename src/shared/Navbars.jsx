@@ -18,7 +18,7 @@ function Navbars() {
     window.addEventListener("scroll", handleSCroll);
     return () => window.removeEventListener("scroll", handleSCroll);
   });
-  const closeBtn = useSelector((state) => state.Card.isCartOpen);
+
   const cart = useSelector((state) => state.Card.cart);
 
   return (
@@ -52,6 +52,15 @@ function Navbars() {
                 to={"/about"}
               >
                 about
+              </Link>
+            </Nav>
+            <Nav>
+          
+              <Link
+                className="text-decoration-none text-black fw-bold text-capitalize"
+                to={"/shoop"}
+              >
+                shoop
               </Link>
             </Nav>
         
