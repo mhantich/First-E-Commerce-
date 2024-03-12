@@ -84,7 +84,7 @@ function Details() {
   };
 
   return (
-    <div>
+    <div style={{overflow:'hidden'}}>
       {singleProdact.length === 0 ? (
         "no prodact found"
       ) : (
@@ -107,25 +107,18 @@ function Details() {
               <Col md={6} className="text-capitalize d-flex flex-column gap-1">
                 <h2 className="hero-title ">{singleProdact[0]?.name} </h2>
 
-                <p>
-                  {" "}
-                  <span className=" fw-bold"> brand : </span>
-                  {singleProdact[0]?.brand}
-                </p>
-                <p className="">
-                  <span className=" fw-bold"> type : </span>
-
-                  {singleProdact[0]?.product_type}
-                </p>
-                <div className="d-flex gap-1">
-                  <span className=" fw-bold"> Tags : </span>
+                <p>{singleProdact[0]?.brand}</p>
+                <p className="">{singleProdact[0]?.product_type}</p>
+                <div className="d-flex  flex-wrap gap-1 bg-gray justify-content-start algin-items-center">
                   {singleProdact[0]?.tag_list.map((item, index) => (
-                    <span key={index}>{item}</span>
+                    <button style={{border:'1px solid black'}} className="btn rounded " key={index}>
+                      {item}
+                    </button>
                   ))}
                 </div>
 
                 <p className="text-secondary-emphasis fw-lighter fs-6">
-                  <span className=" fw-bold"> description : </span>
+          
                   {singleProdact[0]?.description.substring(0, 200)}
                 </p>
                 <div className=" gap-2  py-2">
@@ -143,18 +136,18 @@ function Details() {
                   </div>
                 </div>
 
-                <div className="d-flex w-100 px-2 flex-wrap gap-2  justify-content-around ">
-                  <div className="d-flex gap-2   justify-content-center align-items-center">
+                <div className="d-flex w-100 px-2 flex-wrap gap-2  justify-content-between ">
+                  <div className="d-flex gap-2  border    justify-content-start align-items-center">
                     <button
                       onClick={() => setNumber(Math.max(Number - 1, 0))}
-                      className="py-2 px-3  btn-custmer hover-text"
+                      className="btn"
                     >
                       -
                     </button>
-                    <p className="m-1 fw-bold mx-2">{Number}</p>
+                    <p className=" fw-bold mx-2">{Number}</p>
                     <button
                       onClick={() => setNumber(Number + 1)}
-                      className="py-2 px-3 btn-custmer hover-text"
+                      className="btn"
                     >
                       +
                     </button>
@@ -163,7 +156,7 @@ function Details() {
                   <button
                     style={{ display: "block" }}
                     onClick={handleaDD}
-                    className=" btn-custmer hover-text  mx-auto w-75  text-capitalize hover-text gap-2  py-1 px-2 d-flex justify-content-between px-2 "
+                    className=" btn-custmer hover-text  mx-auto w-100  text-capitalize hover-text gap-2  py-1 px-2 d-flex justify-content-between px-2 "
                   >
                     <span className="  text-capitalize ">add to bag</span>
                     <span className="  text-capitalize ">
