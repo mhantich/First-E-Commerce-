@@ -65,7 +65,7 @@ function Arrive() {
                         to={`prodact/${product.id}`}
                       >
                         <button className="btn-custmer hover-text mx-auto gap-2 hover-text p-1 d-flex justify-content-between fs-7 fw-bold text-capitalize px-2">
-                          <span className="   ">add to cart</span>
+                          <span className="   ">add to bag</span>
                           <span className="">${product.price}</span>
                         </button>
                       </Link>
