@@ -65,8 +65,8 @@ function BestSell() {
                       to={`prodact/${product.id}`}
                     >
                       <button className=" btn-custmer mx-auto   text-capitalize hover-text gap-2  py-1 px-2 d-flex justify-content-between px-2 ">
-                        <span className="fw-bold fs-7">add to cart</span>
-                        <span className="fw-bold fs-7">${product.price}</span>
+                        <span className="fw-bold fs-7 text-black">add to cart</span>
+                        <span className="fw-bold fs-7  text-black">${product.price}</span>
                       </button>
                     </Link>
                   </Card>

@@ -160,27 +160,27 @@ function Details() {
                   <div className="d-flex justify-content-center align-items-center">
                     <button
                       onClick={() => setNumber(Math.max(Number - 1, 0))}
-                      className="py-2 px-3 btn-custmer hover-text"
+                      className="py-2 px-3 text-black btn-custmer hover-text"
                     >
                       -
                     </button>
                     <p className="m-1 fw-bold mx-2">{Number}</p>
                     <button
                       onClick={() => setNumber(Number + 1)}
-                      className="py-2 px-3 btn-custmer hover-text"
+                      className="py-2 px-3 text-black btn-custmer hover-text"
                     >
                       +
                     </button>
                   </div>
                   <button
-                    className=" btn-custmer hover-text p-2 flex-1 w-50 gap-2 d-flex justify-content-center  px-2 "
+                    className=" btn-custmer hover-text text-black p-2 flex-1 w-50 gap-2 d-flex justify-content-center  px-2 "
                     style={{ display: "block" }}
                     onClick={handleaDD}
                   >
-                    <span className="fw-bold text-capitalize ">
+                    <span className="fw-bold text-black text-capitalize ">
                       add to cart
                     </span>
-                    <span className="fw-bold text-capitalize ">
+                    <span className="fw-bold text-black text-capitalize ">
                       {singleProdact[0]?.price}$
                     </span>
                   </button>
@@ -222,7 +222,7 @@ function Details() {
                         className=" btn-custmer hover-text p-1  px-2 "
                         style={{ display: "block", margin: "0 auto" }}
                       >
-                        <span className="fw-bold text-capitalize ">
+                        <span className="fw-bold text-black text-capitalize ">
                           shop now
                         </span>
                       </button>
