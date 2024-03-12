@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useDispatch } from 'react-redux'
 import { decreaseCount, increaseCount, removeFromCart } from '../state/Card'
 import { FaRegTrashCan } from "react-icons/fa6";

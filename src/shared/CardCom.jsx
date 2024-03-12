@@ -26,7 +26,7 @@ function CardCom() {
             <h1 className="text-center text-capitalize hero-title">card</h1>
             { cartitem.length === 0 ? <h2 className="text-center hero-title">you cart is empty </h2> :
             <div>
-            <div className="flex-1 gap-3 d-flex flex-column align-items-centerr div-caard mb-4 ">
+            <div className="flex-1 gap-3 d-flex flex-column align-items-centerr div-caard mb-2 ">
                  <ItemCard Cart={cartitem}/>
             </div>
             <button className=" fw-bold  hover-text text-capitalize py-2 btn-custmer  w-100 hover-text mb-2">
