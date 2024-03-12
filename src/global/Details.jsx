@@ -109,7 +109,6 @@ function Details() {
               <Col md={6} className="text-capitalize d-flex flex-column gap-1">
                 <h2 className="hero-title ">{singleProdact[0]?.name} </h2>
                 <div className="d-flex justify-content-start align-items-center ">
-                  
                   <MdOutlineStarRate />
                   {singleProdact[0]?.rating == null && 5.6}
                 </div>
@@ -136,24 +135,23 @@ function Details() {
                   {singleProdact[0]?.description.substring(0, 200)}
                 </p>
                 <div className=" gap-2  py-2">
-                <p className="fw-bold mb-2" style={{display:'block'}}>colors : </p>
-                  <Row>
-                  {singleProdact[0]?.product_colors.map((item, index) => (
-                    <Col sx={1}>
+                  <p className="fw-bold mb-2" style={{ display: "block" }}>
+                    colors :{" "}
+                  </p>
+                  <div className="d-flex gap-1 flex-wrap justify-content-start algin-items-center">
+
+                    {singleProdact[0]?.product_colors.map((item, index) => (
                         <button
                           onClick={() => {
                             handleColor(item.hex_value);
                           }}
                           style={{ backgroundColor: `${item.hex_value}` }}
-                          className="w-100 py-3  btn px-2"
+                          className=" py-3  btn px-6"
                           key={index}
                         ></button>
-                        </Col>
-                      ))}
-                
-                  </Row>
-                    
-                     
+                        ))}
+                  
+                        </div>
                 </div>
 
                 <div className="d-flex w-100  justify-content-around ">
