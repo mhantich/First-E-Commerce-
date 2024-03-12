@@ -19,7 +19,7 @@ function ItemCard({Cart}) {
                     <img
                       style={{ objectFit: "cover" }}
                       className="w-100  h-100"
-                      src={item.product.image_link}
+                      src={item.product.api_featured_image}
                       alt=""
                     />
                   </div>
@@ -44,7 +44,7 @@ function ItemCard({Cart}) {
 
 
                   <div className=" px-2 d-flex flex-column  justify-content-center align-items-center gap-2">
-                  < FaRegTrashCan                     onClick={() => dispatch(decreaseCount({id:item.product.id})) }
+                  < FaRegTrashCan                     onClick={() => dispatch(removeFromCart({id:item.product.id})) }
   /> 
 
                     <div className=" border d-flex gap-2 align-items-center ">

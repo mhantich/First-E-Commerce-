@@ -139,7 +139,7 @@ function Brands() {
                 className=" btn-custmer hover-text p-1  px-2 "
                 style={{ display: "block", margin: "0 auto" }}
               >
-                <span className="fw-bold text-capitalize ">shop now</span>
+                <span className="fw-bold text-capitalize text-black ">shop now</span>
               </button>
             </Card>
           ))}

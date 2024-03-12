@@ -46,7 +46,7 @@ function Arrive() {
                     <Card className="w-100 m-1 p-2 border-0 text-center  ">
                       <Card.Img
                         className="border-0 w-50 h-50  "
-                        src={product.image_link}
+                        src={product.api_featured_image}
                         alt={product.name}
                         loading="lazy"
                         style={{ margin: "0 auto" }}
@@ -65,8 +65,8 @@ function Arrive() {
                         to={`prodact/${product.id}`}
                       >
                         <button className="btn-custmer mx-auto gap-2 hover-text p-1 d-flex justify-content-between fs-7 fw-bold text-capitalize px-2">
-                          <span className="">add to cart</span>
-                          <span className="">${product.price}</span>
+                          <span className="text-black ">add to cart</span>
+                          <span className="text-black ">${product.price}</span>
                         </button>
                       </Link>
                     </Card>
