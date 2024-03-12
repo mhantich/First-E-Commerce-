@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import FilterList from "../components/FilterList";
 import ProdactList from "../components/ProdactList";
@@ -14,11 +14,14 @@ function Shoop() {
   // Calculate start and end indices based on current page and page size
   const startIndex = (currentPage - 1) * pageSize;
   const endIndex = currentPage * pageSize;
- 
+
   const paginatedProducts = Products.slice(startIndex, endIndex);
 
   const totalPages = Math.ceil(Products.length / pageSize);
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    console.log("jee");
+  }, [currentPage]);
   const handleNextPage = () => {
     if (currentPage < totalPages) {
       setCurrentPage(currentPage + 1);
@@ -31,12 +34,10 @@ function Shoop() {
     }
   };
 
-
   return (
     <Container>
-    <h1 className="hero-title text-center mt-3">our Shoop</h1>
+      <h1 className="hero-title text-center mt-3">our Shoop</h1>
       <Row className="d-flex">
-        
         <Col>
           <ProdactList Products={paginatedProducts} />
           <div className="d-flex justify-content-between">

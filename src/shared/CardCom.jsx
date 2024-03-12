@@ -29,7 +29,7 @@ function CardCom() {
             <div className="flex-1 gap-3 d-flex flex-column align-items-centerr div-caard mb-4 ">
                  <ItemCard Cart={cartitem}/>
             </div>
-            <button className=" fw-bold text-capitalize py-2 btn-custmer  w-100 hover-text mb-2">
+            <button className=" fw-bold  hover-text text-capitalize py-2 btn-custmer  w-100 hover-text mb-2">
               checkout  {total.toFixed(2)}$ 
             </button>
             </div>

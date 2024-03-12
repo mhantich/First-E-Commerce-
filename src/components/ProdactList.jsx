@@ -54,9 +54,9 @@ function ProdactList({ Products }) {
                   className="text-decoration-none fw-bold text-capitalize text-black "
                   to={`/prodact/${product.id}`}
                 >
-                  <button className=" btn-custmer mx-auto  text-black-s-hover  text-capitalize hover-text gap-2  py-1 px-2 d-flex justify-content-between px-2 ">
-                    <span className=" fs-7 fw-bold ">add to bag</span>
-                    <span className="fw-bold fs-7 ">${product.price}</span>
+                  <button className=" btn-custmer mx-auto hover-text   text-capitalize  gap-2  py-1 px-2 d-flex justify-content-between px-2 ">
+                    <span className=" fs-7  ">add to bag</span>
+                    <span className=" fs-7 ">${product.price}</span>
                   </button>
                 </Link>
               </Card>

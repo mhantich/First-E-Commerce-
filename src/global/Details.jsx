@@ -61,12 +61,10 @@ function Details() {
   };
 
   const singleProdact = Products.filter((item) => item.id === +id);
- 
 
   const productSimilar = Products.filter(
     (item) => item.product_type === singleProdact[0]?.product_type
   );
-
 
   const dispatch = useDispatch();
 
@@ -108,10 +106,6 @@ function Details() {
               </Col>
               <Col md={6} className="text-capitalize d-flex flex-column gap-1">
                 <h2 className="hero-title ">{singleProdact[0]?.name} </h2>
-                <div className="d-flex justify-content-start align-items-center ">
-                  <MdOutlineStarRate />
-                  {singleProdact[0]?.rating == null && 5.6}
-                </div>
 
                 <p>
                   {" "}
@@ -135,50 +129,44 @@ function Details() {
                   {singleProdact[0]?.description.substring(0, 200)}
                 </p>
                 <div className=" gap-2  py-2">
-                  <p className="fw-bold mb-2" style={{ display: "block" }}>
-                    colors :{" "}
-                  </p>
                   <div className="d-flex gap-1 flex-wrap justify-content-start algin-items-center">
-
                     {singleProdact[0]?.product_colors.map((item, index) => (
-                        <button
-                          onClick={() => {
-                            handleColor(item.hex_value);
-                          }}
-                          style={{ backgroundColor: `${item.hex_value}` }}
-                          className=" py-3  btn px-6"
-                          key={index}
-                        ></button>
-                        ))}
-                  
-                        </div>
+                      <button
+                        onClick={() => {
+                          handleColor(item.hex_value);
+                        }}
+                        style={{ backgroundColor: `${item.hex_value}` }}
+                        className=" py-3  btn px-6"
+                        key={index}
+                      ></button>
+                    ))}
+                  </div>
                 </div>
 
-                <div className="d-flex w-100  justify-content-around ">
-                  <div className="d-flex justify-content-center align-items-center">
+                <div className="d-flex w-100 px-2 flex-wrap gap-2  justify-content-around ">
+                  <div className="d-flex gap-2   justify-content-center align-items-center">
                     <button
                       onClick={() => setNumber(Math.max(Number - 1, 0))}
-                      className="py-2 px-3 text-black text-black-s-hover btn-custmer hover-text"
+                      className="py-2 px-3  btn-custmer hover-text"
                     >
                       -
                     </button>
                     <p className="m-1 fw-bold mx-2">{Number}</p>
                     <button
                       onClick={() => setNumber(Number + 1)}
-                      className="py-2 px-3 text-black-s-hover text-black btn-custmer hover-text"
+                      className="py-2 px-3 btn-custmer hover-text"
                     >
                       +
                     </button>
                   </div>
+
                   <button
-                    className=" btn-custmer hover-text text-black p-2 flex-1 w-50 gap-2 d-flex justify-content-center  px-2 "
                     style={{ display: "block" }}
                     onClick={handleaDD}
+                    className=" btn-custmer hover-text  mx-auto w-75  text-capitalize hover-text gap-2  py-1 px-2 d-flex justify-content-between px-2 "
                   >
-                    <span className="fw-bold text-black-s-hover text-black text-capitalize ">
-                      add to cart
-                    </span>
-                    <span className="fw-bold text-black text-black-s-hover text-capitalize ">
+                    <span className="  text-capitalize ">add to bag</span>
+                    <span className="  text-capitalize ">
                       {singleProdact[0]?.price}$
                     </span>
                   </button>
@@ -208,7 +196,7 @@ function Details() {
                     </div>
 
                     <Card.Body>
-                      <Card.Text className="hero-title fs-6 text-center text-capitalize">
+                      <Card.Text className=" fs-6 text-center text-capitalize">
                         {item.name}
                       </Card.Text>
                     </Card.Body>
@@ -217,12 +205,10 @@ function Details() {
                       className="text-decoration-none"
                     >
                       <button
-                        className=" btn-custmer hover-text p-1 fw-bold  text-capitalize  px-2 "
+                        className=" hover-text  btn-custmer hover-text p-1 fw-bold  text-capitalize px-3 "
                         style={{ display: "block", margin: "0 auto" }}
                       >
-                        <span>
-                          shop now
-                        </span>
+                        <span>shop now</span>
                       </button>
                     </Link>
                   </Card>
