@@ -20,7 +20,6 @@ function Navbars() {
   });
 
   const cart = useSelector((state) => state.Card.cart);
-
   return (
     <Navbar
       className={`${!isTopOfPage && "fixed-top z-index-2"}`}
