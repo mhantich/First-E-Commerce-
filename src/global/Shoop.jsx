@@ -37,10 +37,12 @@ function Shoop() {
   return (
     <Container>
       <h1 className="hero-title text-center mt-3">our Shoop</h1>
-      <Row className="d-flex">
+      <Row className="d-flex
+      pt-3
+      ">
         <Col>
           <ProdactList Products={paginatedProducts} />
-          <div className="d-flex justify-content-between">
+          <div className="d-flex mt-3 justify-content-between">
             <button
               className="btn rounded"
               onClick={handlePrevPage}

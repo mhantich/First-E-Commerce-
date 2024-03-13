@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
-
+import { CiUser } from "react-icons/ci";
 import { IoBagOutline } from "react-icons/io5";
 import { Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -21,8 +21,8 @@ function Navbars() {
   const cart = useSelector((state) => state.Card.cart);
   return (
     <Navbar
-      className={`${!isTopOfPage && "fixed-top z-index-2"}`}
-      bg="light"
+      className={`${!isTopOfPage && "fixed-top filternav z-index-2"}`}
+      // bg="light"
       expand="lg"
     >
       <Container>
@@ -35,7 +35,6 @@ function Navbars() {
         <Navbar.Collapse id="basic-navbar-nav bg-dark">
           <Nav className="m-auto  gap-3">
             <Nav>
-          
               <Link
                 className="text-decoration-none text-black fw-bold text-capitalize"
                 to={"/"}
@@ -44,7 +43,6 @@ function Navbars() {
               </Link>
             </Nav>
             <Nav>
-          
               <Link
                 className="text-decoration-none text-black fw-bold text-capitalize"
                 to={"/about"}
@@ -53,7 +51,6 @@ function Navbars() {
               </Link>
             </Nav>
             <Nav>
-          
               <Link
                 className="text-decoration-none text-black fw-bold text-capitalize"
                 to={"/shoop"}
@@ -61,9 +58,8 @@ function Navbars() {
                 shoop
               </Link>
             </Nav>
-        
+
             <Nav>
-          
               <Link
                 className="text-decoration-none text-black fw-bold text-capitalize"
                 to={"/"}
@@ -72,7 +68,6 @@ function Navbars() {
               </Link>
             </Nav>
             <Nav>
-          
               <Link
                 className="text-decoration-none text-black fw-bold text-capitalize"
                 to={"/"}
@@ -83,14 +78,14 @@ function Navbars() {
           </Nav>
           <Nav className="gap-2 align-items-center">
             <Nav>
-              Login{" "}
               <Link
                 className="text-decoration-none text-black fw-bold text-capitalize"
-                to={"/"}
-              ></Link>
+                to={"/login"}
+              >
+                <CiUser className="fw-bold fs-3" />
+              </Link>
             </Nav>
             <Nav>
-          
               <Link
                 className="text-decoration-none text-black fw-bold text-capitalize"
                 to={"/"}
@@ -101,7 +96,7 @@ function Navbars() {
                   dispatch(setIsCartOpen({}));
                 }}
               >
-                <IoBagOutline className="" />
+                <IoBagOutline className="fs-3" />
                 <p
                   style={{ width: "1rem" }}
                   className="bg-danger text-white fs-7 position-absolute top-0 end-0 rounded-circle  "

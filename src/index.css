@@ -19,8 +19,6 @@ a {
   text-decoration: none;
 }
 html,
-
-
 .code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -65,7 +63,7 @@ html,
   color: rgb(251, 246, 246);
   transition: 0.5s;
   font-family: "Abril Fatface", serif;
-    font-style: normal;
+  font-style: normal;
 }
 
 .card-container {
@@ -200,8 +198,12 @@ html,
 /* end of loader */
 
 .bg-lainer {
-  background: rgb(221,221,221);
-  background: linear-gradient(90deg, rgba(221,221,221,0.7792366946778712) 0%, rgba(123,154,197,1) 100%);
+  background: rgb(221, 221, 221);
+  background: linear-gradient(
+    90deg,
+    rgba(221, 221, 221, 0.7792366946778712) 0%,
+    rgba(123, 154, 197, 1) 100%
+  );
 }
 .word-spacing {
   word-spacing: 10px; /* Adjust the value as needed */
@@ -250,11 +252,25 @@ html,
   overflow: hidden;
 }
 @media (max-width: 575px) {
-  .image-conainter,.arriveImg {
+  .image-conainter,
+  .arriveImg {
     display: none;
   }
   .div-caard {
     max-height: 66vh;
+  }
+  .filter {
+    /* From https://css.glass */
+    background: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  .background-login {
+    background-image: none !important;
+    background-color: rgb(255, 255, 255) !important;
+    overflow: hidden;
   }
 
   .hero-title {
@@ -279,17 +295,95 @@ html,
   font-size: 0.7rem !important;
 }
 
-
-.custim-height{
+.custim-height {
   height: 65px;
 }
-.sticky{
+.sticky {
   position: -webkit-sticky;
-position: sticky;
-top: 12%;
-padding: 5px;
-background-color: #cae8ca;
-border: 2px solid #4CAF50;
-height: 20vh;
+  position: sticky;
+  top: 12%;
+  padding: 5px;
+  background-color: #cae8ca;
+  border: 2px solid #4caf50;
+  height: 20vh;
+}
+.filter {
+  /* From https://css.glass */
+  background: rgba(130, 72, 72, 0.21);
+  box-shadow: 0 4px 30px rgba(246, 246, 246, 0.441);
+  backdrop-filter: blur(6.3px);
+  -webkit-backdrop-filter: blur(6.3px);
+}
+.filternav {
+  background: rgba(245, 245, 245, 0.679);
+  box-shadow: 0 4px 30px rgba(246, 246, 246, 0.842);
+  backdrop-filter: blur(6.3px);
+  -webkit-backdrop-filter: blur(6.3px);
+}
+/* login */
+.form {
+  background-color: #fff;
+  display: block;
+  padding: 1rem;
+  max-width: 350px;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
 
+.form-title {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  text-align: center;
+  color: #000;
+}
+
+.input-container {
+  position: relative;
+}
+
+.input-container input,
+.form button {
+  outline: none;
+  border: 1px solid #e5e7eb;
+  margin: 8px 0;
+}
+
+.input-container input {
+  background-color: #fff;
+  padding: 1rem;
+  padding-right: 3rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  width: 300px;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.submit {
+  display: block;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  background-color: #4f46e5;
+  color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  width: 100%;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+}
+
+.signup-link {
+  color: #6b7280;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-align: center;
+}
+
+.signup-link a {
+  text-decoration: underline;
 }

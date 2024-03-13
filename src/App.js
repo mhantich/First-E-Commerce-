@@ -22,6 +22,7 @@ const LazyHomeSection = lazy(() => import("./global/Home"));
 const LazyDetailsSection = lazy(() => import("./global/Details"));
 const LazyProdactSection = lazy(() => import("./global/Shoop"));
 const LazyAboutSection = lazy(() => import("./global/About"));
+const LazyProdactSignUp = lazy(() => import("./global/SignUp"));
 
 const App = () => {
   const dispatch = useDispatch();
@@ -52,7 +53,9 @@ const App = () => {
         <div>
           <Topbar />
           <Navbars />
+
           <Outlet />
+
           <Footer />
           {loading && <Loader />}
           <ByDev />
@@ -69,9 +72,10 @@ const App = () => {
           <Route index element={<LazyHomeSection />} />
           <Route path="/prodact/:id" element={<LazyDetailsSection />} />
           <Route path="/about" element={<LazyAboutSection />} />
+          <Route path="/login" element={<LazyProdactSignUp />} />
           <Route path="/shoop" element={<LazyProdactSection />} />
         </Route>
-        <Route path="*" element={'erro'} />
+        <Route path="*" element={"erro"} />
       </Route>
     )
   );
