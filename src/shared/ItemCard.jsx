@@ -11,7 +11,7 @@ function ItemCard({Cart}) {
 
     <div>
         {Cart.map((item,index)=>(
-            <div className="d-flex border justify-content-between ">
+            <div key={index} className="d-flex border justify-content-between ">
                   <div
                     style={{ width: "120px", height: "120px" }}
                     className="d-flex px-2 flex-shrink-1 p-2 rounded-1"

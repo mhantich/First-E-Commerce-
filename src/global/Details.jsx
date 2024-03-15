@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import { useParams } from "react-router";
 import Slider from "react-slick";
-import { MdOutlineStarRate } from "react-icons/md";
+
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -157,6 +157,7 @@ function Details() {
                   </div>
 
                   <button
+                
                     style={{ display: "block" }}
                     onClick={handleaDD}
                     className=" btn-custmer hover-text  mx-auto w-100  text-capitalize hover-text gap-2  py-1 px-2 d-flex justify-content-between px-2 "
@@ -201,7 +202,7 @@ function Details() {
                       className="text-decoration-none"
                     >
                       <button
-                        disabled={color.length === 0}
+                        
                         className=" hover-text  btn-custmer hover-text p-1 fw-bold  text-capitalize px-3 "
                         style={{ display: "block", margin: "0 auto" }}
                       >

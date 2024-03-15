@@ -20,17 +20,17 @@ function SignUp() {
     >
       <div className="W-100 postion-relative h-100 d-flex justify-content-center align-items-center filter ">
   
-      <form class="form">
-       <p class="form-title">Sign in to your account</p>
-        <div class="input-container">
+      <form className="form">
+       <p className="form-title">Sign in to your account</p>
+        <div className="input-container">
           <input type="email" placeholder="Enter email"/>
           <span>
           </span>
       </div>
-      <div class="input-container">
+      <div className="input-container">
           <input type="password" placeholder="Enter password"/>
         </div>
-         <button onClick={handleclick} type="submit" class="submit">
+         <button onClick={handleclick} type="submit" className="submit">
         Sign in
       </button>
 
@@ -40,7 +40,7 @@ function SignUp() {
         {alert && (
           <div
             style={{ transform: "translate(50%, 50%)" }}
-            class="alert alert-danger text-center showALer text-capitalize top-50 position-absolute  end-50"
+            className="alert alert-danger text-center showALer text-capitalize top-50 position-absolute  end-50"
             role="alert"
           >
             login functionality is not available yet :( 

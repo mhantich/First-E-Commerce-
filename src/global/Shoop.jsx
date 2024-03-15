@@ -14,9 +14,9 @@ function Shoop() {
   const pageSize = 30; // Number of products per page
   const [currentPage, setCurrentPage] = useState(1);
 
-  const [selectedCategory, setSelectedCategory] = useState(null);
-  const [selectedPrice, setselectedPrice] = useState(null);
-  const [selectedbrands, setSelectedBrnds] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState('');
+  const [selectedPrice, setselectedPrice] = useState('');
+  const [selectedbrands, setSelectedBrnds] = useState('');
   const [ShowFilter, setShowFilter] = useState(false);
 
   const [query, setQuery] = useState("");

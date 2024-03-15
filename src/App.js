@@ -16,7 +16,7 @@ import { fetchProduct } from "./state/products";
 import Loader from "./global/Loader";
 import CardCom from "./shared/CardCom";
 import AddSucess from "./shared/AddSucess";
-import Erro from "./global/Erro";
+
 
 const LazyHomeSection = lazy(() => import("./global/Home"));
 const LazyDetailsSection = lazy(() => import("./global/Details"));

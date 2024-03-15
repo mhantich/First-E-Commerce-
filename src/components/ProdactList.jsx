@@ -2,7 +2,6 @@ import React from "react";
 import { Card, Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { IoSearchSharp } from "react-icons/io5";
-import { GoFilter } from "react-icons/go";
 import NoResult from "./NoResult";
 
 const ProductColors = ({ colors }) => (
@@ -47,12 +46,12 @@ function ProdactList({
           <select
             value={selectedbrands} // Set the selected value to the state variable
             onChange={handleBrandChange}
-            class="form-select form-select-sm"
+            className="form-select form-select-sm"
             aria-label=".form-select-sm example"
           >
-            <option selected> Select Brands Here</option>
+            <option defaultValue> Select Brands Here</option>
             {brand.map((item, index) => (
-              <option value={item}>{item}</option>
+              <option key={index} value={item}>{item}</option>
             ))}
           </select>
         </div>
