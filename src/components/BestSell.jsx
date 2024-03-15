@@ -30,9 +30,12 @@ function BestSell() {
         </div>
 
         {error === true ? (
-          <div className="d-flex container justify-content-center">
+          <div style={{overflow:'hidden'}} className="container">
+                           <div className="d-flex container justify-content-center">
             <img src="back404.gif" alt="" />{" "}
           </div>
+          </div>
+          
         ) : (
           <Row className="justify-content-center gap-1">
             {filteredProducts &&

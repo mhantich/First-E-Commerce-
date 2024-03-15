@@ -57,7 +57,7 @@ const App = () => {
           <Outlet />
 
           <Footer />
-           {loading && <Loader />} 
+          {loading && <Loader />}
           <ByDev />
           {AddAnamation && <AddSucess />}
         </div>

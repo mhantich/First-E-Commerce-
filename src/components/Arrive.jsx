@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 function Arrive() {
-  const {Product,error} = useSelector((state) => state.products);
+  const { Product, error } = useSelector((state) => state.products);
 
   const desiredBrand = "blush";
 
@@ -14,7 +14,7 @@ function Arrive() {
       (product) => product.product_type === desiredBrand
     ).slice(4, 10);
   }, [Product, desiredBrand]);
-  
+
   return (
     <div className=" py-5">
       <Container>
@@ -39,41 +39,50 @@ function Arrive() {
             />
           </Col>
           <Col md={6}>
-          { error === true ?  <div className="d-flex container justify-content-center"><img src="back404.gif" alt=""  /> </div>   :  <Row className="py-3">
-              {filteredProducts &&
-                filteredProducts.map((product, index) => (
-                  <Col key={index} sm={12} md={4} className="">
-                    <Card className="w-100 m-1 p-2 border-0 text-center  ">
-                      <Card.Img
-                        className="border-0 w-50 h-50  "
-                        src={product.api_featured_image}
-                        alt={product.name}
-                        loading="lazy"
-                        style={{ margin: "0 auto" }}
-                      />
-                      <Card.Body>
-                        <Card.Text
-                          className="hero-title text-s fs-7 my-2"
-                          style={{ whiteSpace: "nowrap" }}
+            {error === true ? (
+              <div style={{overflow:'hidden'}} className="container">
+                <div className="d-flex container justify-content-center">
+                  <img src="back404.gif" alt="" />{" "}
+                </div>
+              </div>
+            ) : (
+              <Row className="py-3">
+                {filteredProducts &&
+                  filteredProducts.map((product, index) => (
+                    <Col key={index} sm={12} md={4} className="">
+                      <Card className="w-100 m-1 p-2 border-0 text-center  ">
+                        <Card.Img
+                          className="border-0 w-50 h-50  "
+                          src={product.api_featured_image}
+                          alt={product.name}
+                          loading="lazy"
+                          style={{ margin: "0 auto" }}
+                        />
+                        <Card.Body>
+                          <Card.Text
+                            className="hero-title text-s fs-7 my-2"
+                            style={{ whiteSpace: "nowrap" }}
+                          >
+                            {product.name}
+                          </Card.Text>
+                          <Card.Text className="fs-7">
+                            {product.brand}
+                          </Card.Text>
+                        </Card.Body>
+                        <Link
+                          className="text-decoration-none fw-bold text-capitalize"
+                          to={`prodact/${product.id}`}
                         >
-                          {product.name}
-                        </Card.Text>
-                        <Card.Text className="fs-7">{product.brand}</Card.Text>
-                      </Card.Body>
-                      <Link
-                        className="text-decoration-none fw-bold text-capitalize"
-                        to={`prodact/${product.id}`}
-                      >
-                        <button className="btn-custmer hover-text mx-auto gap-2 hover-text p-1 d-flex justify-content-between fs-7 fw-bold text-capitalize px-2">
-                          <span className="   ">add to bag</span>
-                          <span className="">${product.price}</span>
-                        </button>
-                      </Link>
-                    </Card>
-                  </Col>
-                ))}
-            </Row>
-}
+                          <button className="btn-custmer hover-text mx-auto gap-2 hover-text p-1 d-flex justify-content-between fs-7 fw-bold text-capitalize px-2">
+                            <span className="   ">add to bag</span>
+                            <span className="">${product.price}</span>
+                          </button>
+                        </Link>
+                      </Card>
+                    </Col>
+                  ))}
+              </Row>
+            )}
           </Col>
         </Row>
       </Container>

@@ -9,7 +9,7 @@ const LazyContact = lazy(() => import("../components/Contact"));
 
 function Home() {
   return (
-    <div className="">
+    <div style={{overflowX:'hidden'}} className="">
         <LazyHomesection />
         <LazyBestSell /> 
         <LazyBrands />

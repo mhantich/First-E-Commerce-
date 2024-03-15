@@ -21,7 +21,7 @@ function Navbars() {
   const cart = useSelector((state) => state.Card.cart);
   return (
     <Navbar
-      className={`${!isTopOfPage && "fixed-top filternav z-index-2"}`}
+      className={`${!isTopOfPage && "fixed-top  filternav z-index-2"}`}
       // bg="light"
       expand="lg"
     >
@@ -59,22 +59,7 @@ function Navbars() {
               </Link>
             </Nav>
 
-            <Nav>
-              <Link
-                className="text-decoration-none text-black fw-bold text-capitalize"
-                to={"/"}
-              >
-                Features
-              </Link>
-            </Nav>
-            <Nav>
-              <Link
-                className="text-decoration-none text-black fw-bold text-capitalize"
-                to={"/"}
-              >
-                best sell
-              </Link>
-            </Nav>
+         
           </Nav>
           <Nav className="gap-2 align-items-center">
             <Nav>
