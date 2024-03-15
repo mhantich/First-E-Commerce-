@@ -1,6 +1,9 @@
 import React from "react";
 import { Card, Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { IoSearchSharp } from "react-icons/io5";
+import { GoFilter } from "react-icons/go";
+import NoResult from "./NoResult";
 
 const ProductColors = ({ colors }) => (
   <div className=" custim-height ">
@@ -16,23 +19,72 @@ const ProductColors = ({ colors }) => (
   </div>
 );
 
-function ProdactList({ Products }) {
+function ProdactList({
+  Products,
+  handleInputChange,
+  query,
+  handleBrandChange,
+  selectedbrands,
+}) {
+  const brand = [
+    "colourpop",
+    "boosh",
+    "deciem",
+    "zorah biocosmetiques",
+    "w3llpeople",
+    "sally b's skin yummies",
+    "rejuva minerals",
+    "penny lane organics",
+    "nudus",
+    "marienatie",
+    "maia's mineral galaxy",
+  ];
+
   return (
-    <div className="p-2">
-      <Row className="gap-5 justify-content-center ">
-        {Products &&
+    <div className="p-2  ">
+      <div className="  form-wrapper  d-flex justify-content-between py-3">
+        <div className=" hidden-none  align-items-center gap-2">
+          <select
+            value={selectedbrands} // Set the selected value to the state variable
+            onChange={handleBrandChange}
+            class="form-select form-select-sm"
+            aria-label=".form-select-sm example"
+          >
+            <option selected> Select Brands Here</option>
+            {brand.map((item, index) => (
+              <option value={item}>{item}</option>
+            ))}
+          </select>
+        </div>
+
+        <div className=" bg-white d-flex border justify-content-between align-items-center input-conainter px-2 py-2 rounded-3">
+          <input
+            type="text"
+            placeholder="Search..."
+            className=" search-inputs"
+            onChange={handleInputChange}
+            value={query}
+          />
+          <IoSearchSharp />
+        </div>
+      </div>
+
+      <Row className="gap-2 justify-content-center ">
+        {Products.length === 0 ? (
+          <NoResult />
+        ) : (
           Products.map((product, index) => (
             <Col
               style={{ overflow: "hidden" }}
               sm={12}
-              md={4}
+              md={5}
               lg={3}
               key={index}
             >
               <Card className="border-0 mx-auto" style={{ width: "13rem" }}>
-                <div style={{ height: "200px" }}>
+                <div className="mb-1" style={{ height: "200px" }}>
                   <Card.Img
-                    className="border-0"
+                    className="border-0 "
                     style={{ height: "100%", width: "100%" }}
                     src={product.api_featured_image}
                     alt={product.name}
@@ -40,7 +92,7 @@ function ProdactList({ Products }) {
                   />
                 </div>
 
-                <Card.Body style={{}}>
+                <Card.Body className="p-0">
                   <Card.Text className="hero-title text-s  ">
                     {product.name}
                   </Card.Text>
@@ -54,14 +106,15 @@ function ProdactList({ Products }) {
                   className="text-decoration-none fw-bold text-capitalize text-black "
                   to={`/prodact/${product.id}`}
                 >
-                  <button className=" btn-custmer mx-auto hover-text   text-capitalize  gap-2  py-1 px-2 d-flex justify-content-between px-2 ">
+                  <button className=" btn-custmer w-100 mx-auto hover-text   text-capitalize  gap-2  py-1 px-2 d-flex justify-content-around align-items-center ">
                     <span className=" fs-7  ">add to bag</span>
-                    <span className=" fs-7 ">${product.price}</span>
+                    <span className=" fs-6 ">${product.price}</span>
                   </button>
                 </Link>
               </Card>
             </Col>
-          ))}
+          ))
+        )}
       </Row>
     </div>
   );

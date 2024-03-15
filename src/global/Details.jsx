@@ -84,7 +84,7 @@ function Details() {
   };
 
   return (
-    <div style={{overflow:'hidden'}}>
+    <div style={{ overflow: "hidden" }}>
       {singleProdact.length === 0 ? (
         "no prodact found"
       ) : (
@@ -111,14 +111,17 @@ function Details() {
                 <p className="">{singleProdact[0]?.product_type}</p>
                 <div className="d-flex  flex-wrap gap-1 bg-gray justify-content-start algin-items-center">
                   {singleProdact[0]?.tag_list.map((item, index) => (
-                    <button style={{border:'1px solid black'}} className="btn rounded " key={index}>
+                    <button
+                      style={{ border: "1px solid black" }}
+                      className="btn rounded "
+                      key={index}
+                    >
                       {item}
                     </button>
                   ))}
                 </div>
 
                 <p className="text-secondary-emphasis fw-lighter fs-6">
-          
                   {singleProdact[0]?.description.substring(0, 200)}
                 </p>
                 <div className=" gap-2  py-2">
@@ -198,6 +201,7 @@ function Details() {
                       className="text-decoration-none"
                     >
                       <button
+                        disabled={color.length === 0}
                         className=" hover-text  btn-custmer hover-text p-1 fw-bold  text-capitalize px-3 "
                         style={{ display: "block", margin: "0 auto" }}
                       >

@@ -4,7 +4,7 @@ import { FaFacebook, FaGithub, FaInstagram } from "react-icons/fa";
 
 function Footer() {
   return (
-    <div className="  mt-5  border-top  ">
+    <div className=" container  mt-5  border-top  ">
       <Row>
         <Col sm={12} md={3} className="py-2 px-4 text-center  text-capitalize ">
           <img className="w-25" src="/logo.png" alt="" />

@@ -34,19 +34,16 @@ function SignUp() {
         Sign in
       </button>
 
-      <p class="signup-link">
-        No account?
-        <a href="">Sign up</a>
-      </p>
+    
    </form>
 
         {alert && (
           <div
-            style={{ transform: "translate(53%, 0%)" }}
-            class="alert alert-danger showALer text-capitalize top-0 position-absolute  end-50"
+            style={{ transform: "translate(50%, 50%)" }}
+            class="alert alert-danger text-center showALer text-capitalize top-50 position-absolute  end-50"
             role="alert"
           >
-            login function is not available
+            login functionality is not available yet :( 
           </div>
         )}
       </div>
