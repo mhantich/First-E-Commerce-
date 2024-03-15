@@ -55,7 +55,7 @@ function MobileFilter({
   const price = [5, 10, 15, 20, 30, 40, 50, 60];
 
   return (
-    <div className="show" style={{ display: "none" }}>
+    <div className="showw" style={{ display: "none" }}>
       <div className="container d-flex  flex-column  X py-3 position-fixedd w-100">
         <div>
           <div className="w-100 d-flex justify-content-end">

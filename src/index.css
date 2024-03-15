@@ -273,7 +273,7 @@ html,
   .div-caard {
     max-height: 66vh;
   }
-  .show {
+  .showw {
     display: flex !important;
   }
   .filter {
@@ -412,13 +412,7 @@ html,
   border: none;
 }
 
-/* Demo Colors */
-:root {
-  --demo-blue: #005ba6;
-  --demo-gray: #d6d6d6;
-  --demo-placeholder: #c7c7c7;
-  --demo-border: #e6e6e6;
-}
+
 
 /* Select function */
 .position-fixedd {
@@ -432,5 +426,5 @@ html,
   box-shadow: 0 4px 30px rgba(246, 246, 246, 0.842);
   backdrop-filter: blur(6.3px);
   -webkit-backdrop-filter: blur(6.3px);
-  -index: 50000000;
+  z-index: 50000000;
 }
