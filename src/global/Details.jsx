@@ -9,6 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { addToCart, isAddAnamation } from "../state/Card";
+import NoResult from "../components/NoResult";
 function Details() {
   const { id } = useParams();
   useEffect(() => {
@@ -86,7 +87,7 @@ function Details() {
   return (
     <div style={{ overflow: "hidden" }}>
       {singleProdact.length === 0 ? (
-        "no prodact found"
+       < NoResult />
       ) : (
         <div>
           {" "}

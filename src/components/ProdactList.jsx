@@ -3,8 +3,10 @@ import { Card, Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { IoSearchSharp } from "react-icons/io5";
 import NoResult from "./NoResult";
+import { useSelector } from "react-redux";
 
 const ProductColors = ({ colors }) => (
+
   <div className=" custim-height ">
     <div className="  d-flex gap-1 flex-wrap justify-content-start algin-items-center">
       {colors.map((item, index) => (
@@ -25,6 +27,8 @@ function ProdactList({
   handleBrandChange,
   selectedbrands,
 }) {
+  const {error } = useSelector((state) => state.products);
+
   const brand = [
     "colourpop",
     "boosh",
@@ -41,6 +45,8 @@ function ProdactList({
 
   return (
     <div className="p-2  ">
+
+     
       <div className="  form-wrapper  d-flex justify-content-between py-3">
         <div className=" hidden-none  align-items-center gap-2">
           <select
@@ -67,8 +73,11 @@ function ProdactList({
           <IoSearchSharp />
         </div>
       </div>
-
-      <Row className="gap-2 justify-content-center ">
+      {error ?    <div style={{overflow:'hidden'}} className="container">
+                <div className="d-flex container justify-content-center">
+                  <img src="back404.gif" alt="" />{" "}
+                </div>
+              </div> :<Row className="gap-2 justify-content-center ">
         {Products.length === 0 ? (
           <NoResult />
         ) : (
@@ -114,7 +123,8 @@ function ProdactList({
             </Col>
           ))
         )}
-      </Row>
+      </Row>}
+      
     </div>
   );
 }

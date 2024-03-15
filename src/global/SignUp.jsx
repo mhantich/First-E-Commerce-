@@ -11,7 +11,7 @@ function SignUp() {
   };
   return (
     <div
-      className=" background-login  w-100 "
+      className="container p-0 background-login  w-100 "
       style={{
         backgroundImage: 'url("./loginImg.jpg")',
         backgroundSize: "cover",

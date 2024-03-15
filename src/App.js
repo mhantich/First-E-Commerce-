@@ -16,6 +16,7 @@ import { fetchProduct } from "./state/products";
 import Loader from "./global/Loader";
 import CardCom from "./shared/CardCom";
 import AddSucess from "./shared/AddSucess";
+import Erro from "./global/Erro";
 
 
 const LazyHomeSection = lazy(() => import("./global/Home"));
@@ -75,7 +76,7 @@ const App = () => {
           <Route path="/login" element={<LazyProdactSignUp />} />
           <Route path="/shoop" element={<LazyProdactSection />} />
         </Route>
-        <Route path="*" element={"erro"} />
+        <Route path="*" element={<Erro/>} />
       </Route>
     )
   );

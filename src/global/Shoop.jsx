@@ -8,15 +8,14 @@ import { IoMdArrowBack } from "react-icons/io";
 import { IoFilter } from "react-icons/io5";
 import MobileFilter from "../components/MobileFilter";
 
-
 function Shoop() {
   const Products = useSelector((state) => state.products.Product);
   const pageSize = 30; // Number of products per page
   const [currentPage, setCurrentPage] = useState(1);
 
-  const [selectedCategory, setSelectedCategory] = useState('');
-  const [selectedPrice, setselectedPrice] = useState('');
-  const [selectedbrands, setSelectedBrnds] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [selectedPrice, setselectedPrice] = useState("");
+  const [selectedbrands, setSelectedBrnds] = useState("");
   const [ShowFilter, setShowFilter] = useState(false);
 
   const [query, setQuery] = useState("");
@@ -84,13 +83,11 @@ function Shoop() {
     }
 
     if (selectedCategory) {
-     
       filteredProducts = filteredProducts.filter(
         ({ product_type }) => product_type === selectedCategory
       );
     }
     if (selectedbrands) {
-     
       filteredProducts = filteredProducts.filter(
         ({ brand }) => brand === selectedbrands
       );
@@ -100,9 +97,9 @@ function Shoop() {
   }
 
   const handleRestALL = () => {
-    setSelectedCategory('');
-    setselectedPrice('');
-    setSelectedBrnds('');
+    setSelectedCategory("");
+    setselectedPrice("");
+    setSelectedBrnds("");
     setQuery("");
   };
   const reslut = filtereddata(
@@ -112,12 +109,12 @@ function Shoop() {
     selectedbrands,
     query
   );
-  const handleFilterbtn = ()=>{
-    setShowFilter(true)
-  }
-  const handleFilterbtnhide = ()=>{
-    setShowFilter(false)
-  }
+  const handleFilterbtn = () => {
+    setShowFilter(true);
+  };
+  const handleFilterbtnhide = () => {
+    setShowFilter(false);
+  };
   const paginatedProducts = reslut.slice(startIndex, endIndex);
 
   return (
@@ -128,11 +125,13 @@ function Shoop() {
       pt-3
       "
       >
-
-
         <div className="w-100  d-flex hidden-none justify-content-end">
-          <button onClick={handleFilterbtn} style={{display:'none'}} className=" show-filter btn btn-outline-dark rounded">
-                 < IoFilter className="fs-6  " />
+          <button
+            onClick={handleFilterbtn}
+            style={{ display: "none" }}
+            className=" show-filter btn btn-outline-dark rounded"
+          >
+            <IoFilter className="fs-6  " />
           </button>
           <button
             onClick={handleRestALL}
@@ -164,24 +163,33 @@ function Shoop() {
             <button
               className="btn rounded btn-outline-dark"
               onClick={handlePrevPage}
-              disabled={currentPage === 1 }
+              disabled={currentPage === 1}
             >
               <IoMdArrowBack />
             </button>
             <button
               className="btn btn-outline-dark rounded"
               onClick={handleNextPage}
-              disabled={currentPage === totalPages ||  paginatedProducts.length < pageSize}
+              disabled={
+                currentPage === totalPages ||
+                paginatedProducts.length < pageSize
+              }
             >
               <GrLinkNext />
             </button>
           </div>
         </Col>
       </Row>
-      {ShowFilter && <MobileFilter  handleChange={handleChange}
-              handleChangeprice={handleChangeprice}
-              selectedPrice={selectedPrice}
-              selectedCategory={selectedCategory} handleFilterbtnhide ={handleFilterbtnhide }handleRestALL={handleRestALL}/> }
+      {ShowFilter && (
+        <MobileFilter
+          handleChange={handleChange}
+          handleChangeprice={handleChangeprice}
+          selectedPrice={selectedPrice}
+          selectedCategory={selectedCategory}
+          handleFilterbtnhide={handleFilterbtnhide}
+          handleRestALL={handleRestALL}
+        />
+      )}
     </Container>
   );
 }
