@@ -18,7 +18,6 @@ function Shoop() {
   const [selectedPrice, setselectedPrice] = useState(null);
   const [selectedbrands, setSelectedBrnds] = useState(null);
   const [ShowFilter, setShowFilter] = useState(false);
-  console.log(selectedbrands);
 
   const [query, setQuery] = useState("");
   // Calculate start and end indices based on current page and page size
@@ -85,13 +84,13 @@ function Shoop() {
     }
 
     if (selectedCategory) {
-      console.log(selectedCategory);
+     
       filteredProducts = filteredProducts.filter(
         ({ product_type }) => product_type === selectedCategory
       );
     }
     if (selectedbrands) {
-      console.log(selectedbrands);
+     
       filteredProducts = filteredProducts.filter(
         ({ brand }) => brand === selectedbrands
       );
@@ -120,7 +119,7 @@ function Shoop() {
     setShowFilter(false)
   }
   const paginatedProducts = reslut.slice(startIndex, endIndex);
-  console.log(paginatedProducts);
+
   return (
     <Container>
       <h1 className="hero-title text-capitalize text-center mt-3">our Shoop</h1>
